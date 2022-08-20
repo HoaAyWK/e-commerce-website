@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ECW.Infrastructure.Identity;
 
-public class AppIdentityContextSeed
+public class AppIdentityDbContextSeed
 {
     public static async Task SeedAsync(
         AppIdentityDbContext identityDbContext,

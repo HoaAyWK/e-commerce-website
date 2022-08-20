@@ -1,0 +1,15 @@
+D:\dotnet\ECW\ECW.Infrastructure\bin\Debug\net6.0\ECW.Infrastructure.deps.json
+D:\dotnet\ECW\ECW.Infrastructure\bin\Debug\net6.0\ECW.Infrastructure.dll
+D:\dotnet\ECW\ECW.Infrastructure\bin\Debug\net6.0\ECW.Infrastructure.pdb
+D:\dotnet\ECW\ECW.Infrastructure\bin\Debug\net6.0\ECW.ApplicationCore.dll
+D:\dotnet\ECW\ECW.Infrastructure\bin\Debug\net6.0\ECW.ApplicationCore.pdb
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.csproj.AssemblyReference.cache
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.AssemblyInfoInputs.cache
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.AssemblyInfo.cs
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.csproj.CoreCompileInputs.cache
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.csproj.CopyComplete
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.dll
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\refint\ECW.Infrastructure.dll
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ECW.Infrastructure.pdb
+D:\dotnet\ECW\ECW.Infrastructure\obj\Debug\net6.0\ref\ECW.Infrastructure.dll

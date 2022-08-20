@@ -4,6 +4,7 @@ using System.Text;
 using ECW.ApplicationCore;
 using ECW.ApplicationCore.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ECW.Infrastructure.Identity;
@@ -13,10 +14,12 @@ public class IdentityTokenClaimService : ITokenClaimsService
     private readonly UserManager<AppUser> _userManager;
     private readonly JwtConfig _jwtConfig;
 
-    public IdentityTokenClaimService(UserManager<AppUser> userManager, JwtConfig jwtConfig)
+    public IdentityTokenClaimService(
+        UserManager<AppUser> userManager,
+        IOptionsMonitor<JwtConfig> optionsMonitor)
     {
         _userManager = userManager;
-        _jwtConfig = jwtConfig;
+        _jwtConfig = optionsMonitor.CurrentValue;
     }
 
     public async Task<string> GetTokenAsync(string userName)
@@ -36,9 +39,13 @@ public class IdentityTokenClaimService : ITokenClaimsService
         {
             Subject = new ClaimsIdentity(claims.ToArray()),
             Expires = DateTime.UtcNow.AddDays(7),
-            SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            SigningCredentials = new SigningCredentials(
+                new SymmetricSecurityKey(key),
+                SecurityAlgorithms.HmacSha256Signature)
         };
+        
         var token = tokenHandler.CreateToken(tokenDescriptor);
+
         return tokenHandler.WriteToken(token);
     }
 }

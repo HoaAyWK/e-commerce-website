@@ -1,0 +1,12 @@
+D:\dotnet\ECW\ECW.ApplicationCore\bin\Debug\net6.0\ECW.ApplicationCore.deps.json
+D:\dotnet\ECW\ECW.ApplicationCore\bin\Debug\net6.0\ECW.ApplicationCore.dll
+D:\dotnet\ECW\ECW.ApplicationCore\bin\Debug\net6.0\ECW.ApplicationCore.pdb
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.csproj.AssemblyReference.cache
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.AssemblyInfoInputs.cache
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.AssemblyInfo.cs
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.csproj.CoreCompileInputs.cache
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.dll
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\refint\ECW.ApplicationCore.dll
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ECW.ApplicationCore.pdb
+D:\dotnet\ECW\ECW.ApplicationCore\obj\Debug\net6.0\ref\ECW.ApplicationCore.dll
