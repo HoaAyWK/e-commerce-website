@@ -21,17 +21,19 @@ public class Product : BaseEntity, IAggregateRoot
     public Brand? Brand { get; private set; }
 
     public Product(
-        string name,
-        string description,
-        decimal price,
         int categoryId,
-        int brandId)
+        int brandId,
+        string description,
+        string name,
+        decimal price,
+        string image)
     {
         Name = name;
         Description = description;
         Price = price;
         CategoryId = categoryId;
         BrandId = brandId;
+        Image = image;
     }
 
     public void UpdateDetails(string name, string description, decimal price)
