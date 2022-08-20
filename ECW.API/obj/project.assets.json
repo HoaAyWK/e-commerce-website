@@ -782,6 +782,31 @@
             "rid": "win"
           }
         }
+      },
+      "ECW.ApplicationCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/ECW.ApplicationCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECW.ApplicationCore.dll": {}
+        }
+      },
+      "ECW.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ECW.ApplicationCore": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8"
+        },
+        "compile": {
+          "bin/placeholder/ECW.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECW.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -2246,10 +2271,22 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "ECW.ApplicationCore/1.0.0": {
+      "type": "project",
+      "path": "../ECW.ApplicationCore/ECW.ApplicationCore.csproj",
+      "msbuildProject": "../ECW.ApplicationCore/ECW.ApplicationCore.csproj"
+    },
+    "ECW.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../ECW.Infrastructure/ECW.Infrastructure.csproj",
+      "msbuildProject": "../ECW.Infrastructure/ECW.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "ECW.ApplicationCore >= 1.0.0",
+      "ECW.Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.8",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
@@ -2283,7 +2320,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\dotnet\\ECW\\ECW.ApplicationCore\\ECW.ApplicationCore.csproj": {
+              "projectPath": "D:\\dotnet\\ECW\\ECW.ApplicationCore\\ECW.ApplicationCore.csproj"
+            },
+            "D:\\dotnet\\ECW\\ECW.Infrastructure\\ECW.Infrastructure.csproj": {
+              "projectPath": "D:\\dotnet\\ECW\\ECW.Infrastructure\\ECW.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
