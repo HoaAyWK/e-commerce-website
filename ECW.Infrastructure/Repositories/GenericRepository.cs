@@ -20,23 +20,16 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
         return await dbSet.AsNoTracking().ToListAsync();
     }
 
-    public virtual async Task<bool> AddAsync(TEntity entity)
+    public virtual async Task<TEntity> AddAsync(TEntity entity)
     {
-        await dbSet.AddAsync(entity);
-        
-        return true;
+        var result = await dbSet.AddAsync(entity);
+
+        return result.Entity;
     }
 
-    public virtual async Task<bool> DeleteAsync(int id)
+    public virtual Task DeleteAsync(TEntity entityToDelete)
     {
-        TEntity entityToDelete = await dbSet.FindAsync(id);
-
-        if (entityToDelete == null)
-            return false;
-    
-        Delete(entityToDelete);
-
-        return true;
+        throw new NotImplementedException();
     }
 
     public virtual void Delete(TEntity entityToDelete)
@@ -49,16 +42,15 @@ public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEnt
         dbSet.Remove(entityToDelete);
     }
 
-    public virtual Task<bool> UpdateAsync(TEntity entityToUpdate)
+    public virtual Task UpdateAsync(TEntity entityToUpdate)
     {
         throw new NotImplementedException();
     }
 
-    public virtual bool Update(TEntity entityToUpdate)
+    public virtual void Update(TEntity entityToUpdate)
     {
         dbSet.Attach(entityToUpdate);
         context.Entry(entityToUpdate).State = EntityState.Modified;
-        return true;
     }
 
     public virtual async Task<TEntity?> GetByIdAsync(int id)

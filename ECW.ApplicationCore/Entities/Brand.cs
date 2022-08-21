@@ -10,4 +10,9 @@ public class Brand : BaseEntity, IAggregateRoot
     {
         Name = name;
     }
+
+    public void Update(string name)
+    {
+        Name = name;
+    }
 }

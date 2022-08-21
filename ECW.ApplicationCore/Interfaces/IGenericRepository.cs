@@ -10,13 +10,13 @@ public interface IGenericRepository<TEntity> where TEntity : class
     // Get entity by Id
     Task<TEntity?> GetByIdAsync(int id);
 
-    Task<bool> AddAsync(TEntity entity);
+    Task<TEntity> AddAsync(TEntity entity);
 
-    Task<bool> UpdateAsync(TEntity entityToUpdate);
+    Task UpdateAsync(TEntity entityToUpdate);
 
-    bool Update(TEntity entityToUpdate);
+    void Update(TEntity entityToUpdate);
 
-    Task<bool> DeleteAsync(int id);
+    Task DeleteAsync(TEntity entityToDelete);
 
     void Delete(TEntity entityToDelete);
 }

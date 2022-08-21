@@ -69,3 +69,7 @@ D:\dotnet\ECW\ECW.API\obj\Debug\net6.0\refint\ECW.API.dll
 D:\dotnet\ECW\ECW.API\obj\Debug\net6.0\ECW.API.pdb
 D:\dotnet\ECW\ECW.API\obj\Debug\net6.0\ECW.API.genruntimeconfig.cache
 D:\dotnet\ECW\ECW.API\obj\Debug\net6.0\ref\ECW.API.dll
+D:\dotnet\ECW\ECW.API\bin\Debug\net6.0\AutoMapper.dll
+D:\dotnet\ECW\ECW.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\dotnet\ECW\ECW.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+D:\dotnet\ECW\ECW.API\bin\Debug\net6.0\Swashbuckle.AspNetCore.Annotations.dll

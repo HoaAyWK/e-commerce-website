@@ -25,7 +25,7 @@ public class IdentityTokenClaimService : ITokenClaimsService
     public async Task<string> GetTokenAsync(string userName)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_jwtConfig.JwtSecret);
+        var key = Encoding.ASCII.GetBytes(_jwtConfig.Secret);
         var user = await _userManager.FindByNameAsync(userName);
         var roles = await _userManager.GetRolesAsync(user);
         var claims = new List<Claim> { new Claim(ClaimTypes.Name, userName) };

@@ -34,9 +34,7 @@ public class OrderService : IOrderService
         }).ToList();
 
         var order = new Order(basket.BuyerId, shippingAddress, basketItems);
-        var added = await _unitOfWork.Orders.AddAsync(order);
-
-        if (added)
-            await _unitOfWork.CompleteAsync();
+        await _unitOfWork.Orders.AddAsync(order);
+        await _unitOfWork.CompleteAsync();
     }
 }

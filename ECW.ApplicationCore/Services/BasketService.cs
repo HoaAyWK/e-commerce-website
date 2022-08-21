@@ -1,19 +1,16 @@
 using ECW.ApplicationCore.Entities.BasketAggregate;
 using ECW.ApplicationCore.Exceptions;
 using ECW.ApplicationCore.Interfaces;
-using Microsoft.Extensions.Logging;
 
 namespace ECW.ApplicationCore.Services;
 
 public class BasketService : IBasketService
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ILogger _logger;
 
-    public BasketService(IUnitOfWork unitOfWork, ILogger logger)
+    public BasketService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
-        _logger = logger;
     }
 
     public async Task<Basket> AddItemToBasket(string username, int productId, decimal price, int quantity = 1)
@@ -35,7 +32,12 @@ public class BasketService : IBasketService
 
     public async Task DeleteBasketAsync(int basketId)
     {
-        await _unitOfWork.Baskets.DeleteAsync(basketId);
+        var existingBasket = await _unitOfWork.Baskets.GetByIdAsync(basketId);
+        
+        if (existingBasket is null)
+            throw new BasketNotFoundException(basketId);
+
+        _unitOfWork.Baskets.Delete(existingBasket);
         await _unitOfWork.CompleteAsync();
     }
 
@@ -50,9 +52,6 @@ public class BasketService : IBasketService
         {
             if (quantities.TryGetValue(item.Id.ToString(), out var quantity))
             {
-                if (_logger != null) 
-                    _logger.LogInformation($"Updating quantity of item Id: {item.Id}");
-
                 item.SetQuantity(quantity);
             }
         }
