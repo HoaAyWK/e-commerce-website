@@ -5,9 +5,9 @@ namespace ECW.ApplicationCore.Interfaces;
 
 public interface IBrandService
 {
-    Task<IEnumerable<Brand>> GetAsync();
-    Task<Brand?> GetByIdAsync(int brandId);
-    Task<Brand> CreateAsync(CreateBrandRequest request);
-    Task<UpdateBrandResponse?> UpdateAsync(Brand brandToUpdate);
+    Task<IEnumerable<BrandDto>> GetAsync();
+    Task<BrandDto?> GetByIdAsync(int brandId);
+    Task<CreateBrandResponse?> CreateAsync(CreateBrandRequest request);
+    Task<UpdateBrandResponse?> UpdateAsync(UpdateBrandRequest request);
     Task<DeleteBrandResponse?> DeleteAsync(DeleteBrandRequest request);
 }

@@ -11,12 +11,10 @@ namespace ECW.API.Controllers;
 public class BrandsController : BaseController
 {
     private readonly IBrandService _brandService;
-    private readonly IMapper _mapper;
 
     public BrandsController(IBrandService brandService, IMapper mapper)
     {
         _brandService = brandService;
-        _mapper = mapper;
     }
 
     [HttpGet]
@@ -53,8 +51,7 @@ public class BrandsController : BaseController
     [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public async Task<IActionResult> Update([FromBody] UpdateBrandRequest request)
     {
-        var mappedBrand = _mapper.Map<Brand>(request);
-        var result = await _brandService.UpdateAsync(mappedBrand);
+        var result = await _brandService.UpdateAsync(request);
 
         if (result == null)
             return NotFound();

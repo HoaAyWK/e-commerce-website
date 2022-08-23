@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "aUYGVxzWZpPklqQ+BqR7twJQwPWMF2jN5iwgBzr1ChkRLrfHgZTFcVdLc4guJqpet3y0t1xg1xL7isgW91oMXA==",
+  "dgSpecHash": "jexbc4vLusVqgkcvWEViopexFWtRPMqjnlgcxrm3WRoyGLrvLQUqQbRUiS6piw4U4IpbJtiUPYZ0G8+3OY+kTw==",
   "success": true,
   "projectFilePath": "D:\\dotnet\\ECW\\ECW.ApplicationCore\\ECW.ApplicationCore.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Thinkpad\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
+    "C:\\Users\\Thinkpad\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }
