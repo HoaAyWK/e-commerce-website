@@ -54,5 +54,7 @@ public class MappingProfile : Profile
                 dest => dest.OrderItems,
                 opt => opt.MapFrom(src => src.OrderItems)
             );
+
+        CreateMap<Product, ProductDto>();
     }
 }

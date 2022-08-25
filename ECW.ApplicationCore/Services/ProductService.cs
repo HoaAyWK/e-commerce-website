@@ -101,4 +101,27 @@ public class ProductService : IProductService
 
         return null;
     }
+
+    public async Task<ListPagedProductResponse> ListAsync(ListPagedProductRequest request)
+    {   
+        var response = new ListPagedProductResponse();
+        int productNumbers = await _unitOfWork.Products
+            .CountAsync(request.BrandId, request.CategoryId);
+
+        if (request.PageSize > 0)
+        {
+            response.PageCount = int.Parse(Math.Ceiling((decimal) productNumbers / request.PageSize).ToString());
+        }
+        else
+        {
+            response.PageCount = productNumbers > 0 ? 1 : 0;
+        }
+
+        var products = await _unitOfWork.Products
+            .ListAsync(request.PageSize, request.PageIndex, request.BrandId, request.CategoryId);     
+        var productDtos = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductDto>>(products);
+        response.Products.AddRange(productDtos);
+
+        return response;
+    }
 }

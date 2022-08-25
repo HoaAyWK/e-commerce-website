@@ -34,6 +34,15 @@ public class ProductsController : BaseController
         return Ok(product);
     }
 
+    [HttpGet]
+    [Route("pagination")]
+    public async Task<IActionResult> ListPaged([FromQuery] ListPagedProductRequest request)
+    {
+        var response = await _productService.ListAsync(request);
+
+        return Ok(response);
+    }
+
     [HttpPost]
     [Route("create")]
     [Authorize(Roles = "Admin", AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
