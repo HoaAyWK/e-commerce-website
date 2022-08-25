@@ -121,6 +121,9 @@ public class ProductService : IProductService
             .ListAsync(request.PageSize, request.PageIndex, request.BrandId, request.CategoryId);     
         var productDtos = _mapper.Map<IEnumerable<Product>, IEnumerable<ProductDto>>(products);
         response.Products.AddRange(productDtos);
+        response.Page = request.PageIndex;
+        response.PerPage = request.PageSize;
+        response.Total = productNumbers;
 
         return response;
     }
