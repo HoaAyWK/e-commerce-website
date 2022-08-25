@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "sGfuXeay86ilrKhdoJUGg9bpEN5xGHbTTnw61+0ZwjF7G1+0klxKm+3yNEk5M3QuVYJaCnRlxJEkcijukyUTKQ==",
+  "dgSpecHash": "0K+3B2FXBjN5yN+T0mvMxS9z80nabFaXZLUZMPie+koj5Sb+gxHuunoxTkSR78PGtmBLiLQFHMaOTL4ReoywFQ==",
   "success": true,
   "projectFilePath": "D:\\dotnet\\ECW\\ECW.API\\ECW.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Thinkpad\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\Thinkpad\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\Thinkpad\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\Thinkpad\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\Thinkpad\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\Thinkpad\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\Thinkpad\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.8\\microsoft.aspnetcore.authentication.jwtbearer.6.0.8.nupkg.sha512",
     "C:\\Users\\Thinkpad\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.8\\microsoft.aspnetcore.cryptography.internal.6.0.8.nupkg.sha512",
     "C:\\Users\\Thinkpad\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.8\\microsoft.aspnetcore.cryptography.keyderivation.6.0.8.nupkg.sha512",

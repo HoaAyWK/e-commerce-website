@@ -1,8 +1,6 @@
 using System.Text;
-using ECW.API;
+using ECW.API.Configuration;
 using ECW.ApplicationCore;
-using ECW.ApplicationCore.Interfaces;
-using ECW.ApplicationCore.Services;
 using ECW.Infrastructure;
 using ECW.Infrastructure.Data;
 using ECW.Infrastructure.Identity;
@@ -88,14 +86,9 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+builder.Services.AddApiServices(builder.Configuration);
 
-builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IBrandService, BrandService>();
-builder.Services.AddScoped<IBasketService, BasketService>();
-builder.Services.AddScoped<IOrderService, OrderService>();
-builder.Services.AddScoped<ITokenClaimsService, IdentityTokenClaimService>();
-builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddCoreServices(builder.Configuration);
 
 var app = builder.Build();
 

@@ -88,4 +88,17 @@ public class ProductService : IProductService
         response.Product = mappedProduct;
         return response;
     }
+
+    public async Task<int?> CheckIfNotExistAsync(int[] ids)
+    {
+        foreach (int id in ids)
+        {
+            var existingProduct = await _unitOfWork.Products.GetByIdAsync(id);
+            
+            if (existingProduct == null)
+                return id;
+        }
+
+        return null;
+    }
 }

@@ -14,4 +14,6 @@ public interface IProductService
     Task<UpdateProductResposne?> UpdateAsync(UpdateProductRequest request);
 
     Task<DeleteProductResponse?> DeleteAsync(DeleteProductRequest request);
+
+    Task<int?> CheckIfNotExistAsync(int[] ids);
 }
