@@ -1,5 +1,6 @@
 using AutoMapper;
 using ECW.ApplicationCore.DTOs.Brand;
+using ECW.ApplicationCore.DTOs.Category;
 using ECW.ApplicationCore.DTOs.Order;
 using ECW.ApplicationCore.DTOs.Product;
 using ECW.ApplicationCore.Entities;
@@ -16,6 +17,8 @@ public class MappingProfile : Profile
 
         CreateMap<Product, ProductDto>();
         CreateMap<Product, CreateProductResponse>();
+
+        CreateMap<Category, CategoryDto>();
 
         CreateMap<OrderItem, OrderItemDto>()
             .ForMember(

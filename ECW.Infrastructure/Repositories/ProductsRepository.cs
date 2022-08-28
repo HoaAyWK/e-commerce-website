@@ -20,6 +20,9 @@ public class ProductsRepository : GenericRepository<Product>, IProductsRepositor
 
     public async Task<IEnumerable<Product>> ListAsync(int pageSize, int pageIndex, int? brandId, int? categoryId)
     {
+        if (pageIndex > 0)
+            pageIndex = pageIndex - 1;
+            
         if (brandId != null && categoryId != null)
         {
             return await dbSet.Where(p => p.BrandId == brandId.Value && p.CategoryId == categoryId.Value)

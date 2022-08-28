@@ -18,6 +18,7 @@ public static class ConfigureCoreServices
         services.AddScoped<ITokenClaimsService, IdentityTokenClaimService>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IBasketQueryService, BasketQueryService>();
+        services.AddScoped<ICategoryService, CategoryService>();
 
         return services;
     }

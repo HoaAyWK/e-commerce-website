@@ -90,26 +90,37 @@ builder.Services.AddApiServices(builder.Configuration);
 
 builder.Services.AddCoreServices(builder.Configuration);
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
+builder.Services.AddCors(options => {
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+        policy => {
+            policy.WithOrigins("http://127.0.0.1:5173")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
-{
-    var scopedProvider = scope.ServiceProvider;
-    try
-    {
-        var productContext = scopedProvider.GetRequiredService<ProductContext>();
-        await ProductContextSeed.SeedAsync(productContext, app.Logger);
+// using (var scope = app.Services.CreateScope())
+// {
+//     var scopedProvider = scope.ServiceProvider;
+//     try
+//     {
+//         var productContext = scopedProvider.GetRequiredService<ProductContext>();
+//         await ProductContextSeed.SeedAsync(productContext, app.Logger);
 
-        var userManager = scopedProvider.GetRequiredService<UserManager<AppUser>>();
-        var roleManager = scopedProvider.GetRequiredService<RoleManager<IdentityRole>>();
-        var identityContext = scopedProvider.GetRequiredService<AppIdentityDbContext>();
-        await AppIdentityDbContextSeed.SeedAsync(identityContext, userManager, roleManager);
-    }
-    catch (Exception ex)
-    {
-        app.Logger.LogError(ex, "An error occurred seeding the DB.");
-    }
-}
+//         var userManager = scopedProvider.GetRequiredService<UserManager<AppUser>>();
+//         var roleManager = scopedProvider.GetRequiredService<RoleManager<IdentityRole>>();
+//         var identityContext = scopedProvider.GetRequiredService<AppIdentityDbContext>();
+//         await AppIdentityDbContextSeed.SeedAsync(identityContext, userManager, roleManager);
+//     }
+//     catch (Exception ex)
+//     {
+//         app.Logger.LogError(ex, "An error occurred seeding the DB.");
+//     }
+// }
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -122,6 +133,8 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
+app.UseCors(MyAllowSpecificOrigins);
 
 app.UseAuthorization();
 
